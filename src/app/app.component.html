@@ -4,7 +4,7 @@
   datatable
   [dtOptions]="dtOptions"
   class="table table-striped table-bordered"
-  *ngIf="tableConfig && tableConfig.data && tableConfig.data.length"
+  *ngIf="showTable && tableConfig && tableConfig.data && tableConfig.data.length"
 >
   <thead>
     <tr>

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Config } from 'datatables.net';
 import { Subject } from 'rxjs';
+import { DATATABLE_CONSTANTS } from './data.constants';
 declare var $: any;
 
 export interface Products {
-  columns: Array<{ name: string; prop: string }>;
-  data: Array<{
+  columns?: Array<{ name: string; prop: string }>;
+  data?: Array<{
     id: number;
     name: string;
     price: number;
@@ -21,141 +22,35 @@ export interface Products {
 })
 export class AppComponent implements OnInit {
   title = 'angular-datatable';
-  dtOptions: Config = {
+  tableConfig: Products = {};
+  dtOptions: any = {
     pagingType: 'full_numbers',
     paging: true,
     lengthMenu: [5, 10, 15, 20, 25],
-    pageLength: 5,
+    pageLength: 10,
     ordering: true,
     order: [[0, 'asc']],
     language: {
       search: 'Search',
     },
+    responsive: true,
+    dom: 'Bfrtip',
+    buttons: ['copy', 'print', 'csv', 'excel', 'pdf'],
   };
-  dtTrigger: Subject<any> = new Subject();
-  tableConfig: Products = {
-    columns: [
-      { name: 'ID', prop: 'id' },
-      { name: 'Name', prop: 'name' },
-      { name: 'Price', prop: 'price' },
-      { name: 'Categtory', prop: 'categtory' },
-      { name: 'Status', prop: 'status' },
-    ],
-    data: [
-      {
-        id: 1,
-        name: 'Cricket',
-        price: 100,
-        categtory: 'Sports',
-        status: 'Available',
-      },
-      {
-        id: 2,
-        name: 'Football',
-        price: 150,
-        categtory: 'Sports',
-        status: 'Available',
-      },
-      {
-        id: 3,
-        name: 'Tennis',
-        price: 200,
-        categtory: 'Sports',
-        status: 'Unavailable',
-      },
-      {
-        id: 4,
-        name: 'Basketball',
-        price: 250,
-        categtory: 'Sports',
-        status: 'Available',
-      },
-      {
-        id: 5,
-        name: 'Baseball',
-        price: 300,
-        categtory: 'Sports',
-        status: 'Unavailable',
-      },
-      {
-        id: 6,
-        name: 'Hockey',
-        price: 350,
-        categtory: 'Sports',
-        status: 'Available',
-      },
-      {
-        id: 7,
-        name: 'Golf',
-        price: 400,
-        categtory: 'Sports',
-        status: 'Available',
-      },
-      {
-        id: 8,
-        name: 'Rugby',
-        price: 450,
-        categtory: 'Sports',
-        status: 'Unavailable',
-      },
-      {
-        id: 9,
-        name: 'Volleyball',
-        price: 500,
-        categtory: 'Sports',
-        status: 'Available',
-      },
-      {
-        id: 10,
-        name: 'Badminton',
-        price: 550,
-        categtory: 'Sports',
-        status: 'Available',
-      },
-      {
-        id: 11,
-        name: 'Table Tennis',
-        price: 600,
-        categtory: 'Sports',
-        status: 'Unavailable',
-      },
-      {
-        id: 12,
-        name: 'Cricket',
-        price: 650,
-        categtory: 'Sports',
-        status: 'Available',
-      },
-      {
-        id: 13,
-        name: 'Football',
-        price: 700,
-        categtory: 'Sports',
-        status: 'Available',
-      },
-      {
-        id: 14,
-        name: 'Tennis',
-        price: 750,
-        categtory: 'Sports',
-        status: 'Unavailable',
-      },
-      {
-        id: 15,
-        name: 'Basketball',
-        price: 800,
-        categtory: 'Sports',
-        status: 'Available',
-      },
-    ],
-  };
+  showTable: boolean = true;
 
-  ngOnInit() {}
-
-  ngAfterViewInit() {}
+  ngOnInit() {
+    this.tableConfig = JSON.parse(JSON.stringify(DATATABLE_CONSTANTS.PRODUCTS));
+  }
 
   loadDatatable() {
-    console.log('34');
+    this.showTable = false;
+    setTimeout(() => {
+      this.showTable = true;
+      this.tableConfig = JSON.parse(
+        JSON.stringify(DATATABLE_CONSTANTS.PRODUCTS)
+      );
+    }, 0);
   }
 
   /**
