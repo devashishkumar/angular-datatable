@@ -1,0 +1,19 @@
+<button (click)="loadDatatable()">Load Table</button>
+
+<table
+  datatable
+  [dtOptions]="dtOptions"
+  class="table table-striped table-bordered"
+  *ngIf="tableConfig && tableConfig.data && tableConfig.data.length"
+>
+  <thead>
+    <tr>
+      <th *ngFor="let column of tableConfig.columns">{{ column.name }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of tableConfig.data">
+      <td *ngFor="let c of tableConfig.columns">{{ getValue(d, c) }}</td>
+    </tr>
+  </tbody>
+</table>

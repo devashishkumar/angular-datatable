@@ -1,0 +1,8 @@
+td, th {
+    border: 1px solidy #ccc;
+}
+
+thead {
+    background: blue;
+    color: white;
+}
