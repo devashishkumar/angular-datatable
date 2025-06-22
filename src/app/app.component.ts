@@ -23,20 +23,7 @@ export interface Products {
 export class AppComponent implements OnInit {
   title = 'angular-datatable';
   tableConfig: Products = {};
-  dtOptions: any = {
-    pagingType: 'full_numbers',
-    paging: true,
-    lengthMenu: [5, 10, 15, 20, 25],
-    pageLength: 10,
-    ordering: true,
-    order: [[0, 'asc']],
-    language: {
-      search: 'Search',
-    },
-    responsive: true,
-    dom: 'Bfrtip',
-    buttons: ['copy', 'print', 'csv', 'excel', 'pdf'],
-  };
+  dtOptions: any = DATATABLE_CONSTANTS.DTOPTIONS;
   showTable: boolean = true;
 
   ngOnInit() {

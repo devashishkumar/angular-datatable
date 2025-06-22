@@ -115,4 +115,18 @@ export const DATATABLE_CONSTANTS = {
       },
     ],
   },
+  DTOPTIONS: {
+    pagingType: 'full_numbers',
+    paging: true,
+    lengthMenu: [5, 10, 15, 20, 25],
+    pageLength: 10,
+    ordering: true,
+    order: [[0, 'asc']],
+    language: {
+      search: 'Search',
+    },
+    responsive: true,
+    dom: 'Bfrtip',
+    buttons: ['copy', 'print', 'csv', 'excel', 'pdf'],
+  },
 };
