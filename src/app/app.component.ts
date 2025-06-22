@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Config } from 'datatables.net';
-import { Subject } from 'rxjs';
 import { DATATABLE_CONSTANTS } from './data.constants';
 declare var $: any;
 
