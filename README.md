@@ -29,7 +29,7 @@ imports: [
   ]
 ```
 
-## To execute this application, follow these steps after cloning the project
+## To use this application, follow these steps after cloning the project
 
 1. `npm install`
 2. `ng serve`
