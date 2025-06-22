@@ -1,40 +1,46 @@
 <div class="container">
   <div class="row">
     <div class="card">
-      <div class="card-header"><button class="btn btn-primary" (click)="loadDatatable()">
-        Load Table
-      </button></div>
+      <div class="card-header">Angular Datatable</div>
       <div class="card-body">
         <div class="col-10">
-      
-
-      <table
-        datatable
-        [dtOptions]="dtOptions"
-        class="table table-striped table-bordered"
-        *ngIf="
-          showTable &&
-          tableConfig &&
-          tableConfig.data &&
-          tableConfig.data.length
-        "
-      >
-        <thead>
-          <tr>
-            <th *ngFor="let column of tableConfig.columns">
-              {{ column.name }}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let d of tableConfig.data">
-            <td *ngFor="let c of tableConfig.columns">{{ getValue(d, c) }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+          <div class="float-end">
+            <button
+              class="btn btn-primary btn-sm float-end"
+              (click)="loadDatatable()"
+            >
+              Reload table
+            </button>
+          </div>
+          <table
+            datatable
+            [dtOptions]="dtOptions"
+            class="table table-striped table-bordered"
+            *ngIf="
+              showTable &&
+              tableConfig &&
+              tableConfig.data &&
+              tableConfig.data.length
+            "
+          >
+            <thead>
+              <tr>
+                <th *ngFor="let column of tableConfig.columns">
+                  {{ column.name }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let d of tableConfig.data">
+                <td *ngFor="let c of tableConfig.columns">
+                  {{ getValue(d, c) }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="float-none"></div>
+        </div>
       </div>
     </div>
-    
   </div>
 </div>
