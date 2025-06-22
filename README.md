@@ -72,7 +72,7 @@ dtOptions: any = {
     buttons: ['copy', 'print', 'csv', 'excel', 'pdf'],
   };
 ```
-![Image](https://github.com/user-attachments/assets/df362184-c3e9-49e8-85f9-f9aa46d0fd27)
+![Image](https://github.com/user-attachments/assets/57fb2e98-d745-4208-8f53-94d1263975b9)
 
 ## To use this application, follow these steps after cloning the project
 
