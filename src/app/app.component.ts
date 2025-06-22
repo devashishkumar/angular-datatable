@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DATATABLE_CONSTANTS } from './data.constants';
 declare var $: any;
 
@@ -17,6 +17,7 @@ export interface Products {
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   standalone: false,
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
   title = 'angular-datatable';

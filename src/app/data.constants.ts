@@ -127,6 +127,27 @@ export const DATATABLE_CONSTANTS = {
     },
     responsive: true,
     dom: 'Bfrtip',
-    buttons: ['copy', 'print', 'csv', 'excel', 'pdf'],
+    buttons: [
+      {
+        extend: 'copy',
+        className: 'btn btn-primary btn-sm glyphicon glyphicon-duplicate',
+      },
+      {
+        extend: 'csv',
+        className: 'btn btn-primary btn-sm glyphicon glyphicon-save-file',
+      },
+      {
+        extend: 'excel',
+        className: 'btn btn-primary btn-sm glyphicon glyphicon-list-alt',
+      },
+      {
+        extend: 'pdf',
+        className: 'btn btn-primary btn-sm glyphicon glyphicon-file',
+      },
+      {
+        extend: 'print',
+        className: 'btn btn-primary btn-sm glyphicon glyphicon-print',
+      },
+    ],
   },
 };
